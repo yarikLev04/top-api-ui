@@ -1,7 +1,9 @@
-import { JSX } from "react";
-import { Button, Htag, Paragraph, Tag } from "@/components";
+import { JSX, useState } from "react";
+import { Button, Htag, Paragraph, Rating, Tag } from "@/components";
 
 export default function Home(): JSX.Element {
+  const [rating, setRating] = useState<number>(2);
+
   return (
     <div>
       <Htag tag="h1">12</Htag>
@@ -31,6 +33,7 @@ export default function Home(): JSX.Element {
         s
       </Tag>
       <Tag size="s">m</Tag>
+      <Rating isEditable={true} rating={rating} setRating={setRating}></Rating>
     </div>
   );
 }
